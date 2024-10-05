@@ -130,8 +130,10 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:onlinelearningapp/CustomWidgets/ElevatedButton.dart';
 import 'package:onlinelearningapp/CustomWidgets/OutlinebuttonwithIcon.dart';
+import 'package:onlinelearningapp/Screens/Student%20Screens/ChatScreen.dart';
 import 'package:onlinelearningapp/utils/appcolor.dart';
 
 import '../../CustomWidgets/outlinebutton.dart';
@@ -288,8 +290,10 @@ class _TutorDetailsState extends State<TutorDetails> {
 
           Center(
             child: Elevatedbutton(
-                Onpressed: () {},
-                btntext: 'Schedule a Class',
+                Onpressed: () {
+                  Get.to(() => Chatscreen());
+                },
+                btntext: 'Book a Session',
                 textcolor: whitecolor,
                 bgcolor: maincolor,
                 height: 0.07,
