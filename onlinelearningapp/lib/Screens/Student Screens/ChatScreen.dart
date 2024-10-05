@@ -86,8 +86,10 @@
 import 'dart:ffi';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:onlinelearningapp/CustomWidgets/ElevatedButton.dart';
 import 'package:onlinelearningapp/CustomWidgets/outlinebutton.dart';
+import 'package:onlinelearningapp/Screens/Student%20Screens/PaymentCONFIRMATION.dart';
 import 'package:onlinelearningapp/utils/appcolor.dart';
 
 class Chatscreen extends StatelessWidget {
@@ -166,7 +168,9 @@ class Chatscreen extends StatelessWidget {
           ),
           Center(
             child: Elevatedbutton(
-                Onpressed: () {},
+                Onpressed: () {
+                  Get.to(() => Paymentconfirmation());
+                },
                 btntext: 'Proceed to payment',
                 textcolor: whitecolor,
                 bgcolor: maincolor,
