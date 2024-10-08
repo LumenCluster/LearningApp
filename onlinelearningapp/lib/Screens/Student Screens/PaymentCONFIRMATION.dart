@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:onlinelearningapp/CustomWidgets/ElevatedButton.dart';
 import 'package:onlinelearningapp/utils/appcolor.dart';
 
 class Paymentconfirmation extends StatelessWidget {
@@ -22,6 +23,7 @@ class Paymentconfirmation extends StatelessWidget {
         centerTitle: true,
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
             padding: const EdgeInsets.all(20),
@@ -53,14 +55,81 @@ class Paymentconfirmation extends StatelessWidget {
                     ),
                     Text(
                       "00 October- 00 October",
-                    )
+                    ),
                   ],
-                )
+                ),
               ],
             ),
+          ),
+          Center(
+            child: Container(
+              decoration: BoxDecoration(
+                  color: maincolor, borderRadius: BorderRadius.circular(10)),
+              child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Text(
+                  "You're about to subscribe for a monthly chat plan!",
+                  style: TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
+                      color: whitecolor),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 50,
+          ),
+          buildRow('Duration', '1 Months'),
+          Divider(),
+          buildRow('Duration', '1 Months'),
+          Divider(),
+          buildRow('Duration', '1 Months'),
+          SizedBox(
+            height: 10,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              "Payment Method",
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+            ),
+          ),
+          buildRadiobutton(text: 'Credit Card or Debit Card'),
+          buildRadiobutton(text: 'Paypal'),
+          buildRadiobutton(text: 'Jazzcash')
+        ],
+      ),
+    );
+  }
+
+  buildRow(String text1, String text2) {
+    return Padding(
+      padding: const EdgeInsets.only(
+        left: 30,
+        right: 30,
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(text1,
+              style: TextStyle(fontSize: 13, fontWeight: FontWeight.w500)),
+          Text(
+            text2,
+            style: TextStyle(fontSize: 13, fontWeight: FontWeight.w500),
           )
         ],
       ),
+    );
+  }
+
+  buildRadiobutton({int selectedValue = 1, required String text}) {
+    return Row(
+      children: [
+        Radio(value: 1, groupValue: selectedValue, onChanged: (value) {}),
+        Text(text)
+      ],
     );
   }
 }

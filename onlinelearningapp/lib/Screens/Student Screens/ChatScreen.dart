@@ -158,7 +158,10 @@ class Chatscreen extends StatelessWidget {
           SizedBox(
             height: 15,
           ),
-          buildsecondRow("Duration", "1 Months"),
+          buildsecondRow(
+            "Duration",
+            "1 Months",
+          ),
           Divider(),
           buildsecondRow("Duration", "1 Months"),
           Divider(),
@@ -220,7 +223,12 @@ class Chatscreen extends StatelessWidget {
       padding: const EdgeInsets.only(left: 20, right: 20),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [Text(text1), Text(text2)],
+        children: [
+          Text(text1,
+              style: TextStyle(fontSize: 13, fontWeight: FontWeight.w500)),
+          Text(text2,
+              style: TextStyle(fontSize: 13, fontWeight: FontWeight.w500))
+        ],
       ),
     );
   }
