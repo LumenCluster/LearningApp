@@ -133,7 +133,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:onlinelearningapp/CustomWidgets/ElevatedButton.dart';
 import 'package:onlinelearningapp/CustomWidgets/OutlinebuttonwithIcon.dart';
-import 'package:onlinelearningapp/Screens/Student%20Screens/ChatScreen.dart';
+import 'package:onlinelearningapp/Screens/StudentScreens/ChatScreen.dart';
 import 'package:onlinelearningapp/utils/appcolor.dart';
 
 import '../../CustomWidgets/outlinebutton.dart';

@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:onlinelearningapp/CustomWidgets/smalloutlinebutton.dart';
-import 'package:onlinelearningapp/Screens/Student%20Screens/onlinesession.dart';
+import 'package:onlinelearningapp/Screens/StudentScreens/onlinesession.dart';
 import 'package:onlinelearningapp/utils/appcolor.dart';
 
 import '../../../../Constant/NotesFilename.dart';

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:onlinelearningapp/Screens/Student%20Screens/Boards/Subjects/bilogy.dart';
-import 'package:onlinelearningapp/Screens/Student%20Screens/Boards/Subjects/chemistry.dart';
-import 'package:onlinelearningapp/Screens/Student%20Screens/Boards/Subjects/english.dart';
-import 'package:onlinelearningapp/Screens/Student%20Screens/Boards/Subjects/maths.dart';
-import 'package:onlinelearningapp/Screens/Student%20Screens/chemistry.dart';
+import 'package:onlinelearningapp/Screens/StudentScreens/Boards/Subjects/bilogy.dart';
+import 'package:onlinelearningapp/Screens/StudentScreens/Boards/Subjects/chemistry.dart';
+import 'package:onlinelearningapp/Screens/StudentScreens/Boards/Subjects/english.dart';
+import 'package:onlinelearningapp/Screens/StudentScreens/Boards/Subjects/maths.dart';
+import 'package:onlinelearningapp/Screens/StudentScreens/chemistry.dart';
 
 // Import other subject screens as needed
 

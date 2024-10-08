@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import 'package:onlinelearningapp/Controller/buttoncolorController.dart';
 import 'package:onlinelearningapp/CustomWidgets/ElevatedButton.dart';
 import 'package:onlinelearningapp/CustomWidgets/smalloutlinebutton.dart';
-import 'package:onlinelearningapp/Screens/Student%20Screens/Pastpaper.dart';
+import 'package:onlinelearningapp/Screens/StudentScreens/Pastpaper.dart';
 import 'package:onlinelearningapp/utils/appcolor.dart';
 import 'Cambridgesyllabus.dart';
 import 'Tutordetails.dart';

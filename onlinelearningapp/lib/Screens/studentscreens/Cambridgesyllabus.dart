@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'package:onlinelearningapp/CustomWidgets/smalloutlinebutton.dart';
-import 'package:onlinelearningapp/Screens/Student%20Screens/Pastpaper.dart';
-import 'package:onlinelearningapp/Screens/Student%20Screens/onlinesession.dart';
+import 'package:onlinelearningapp/Screens/StudentScreens/Pastpaper.dart';
+import 'package:onlinelearningapp/Screens/StudentScreens/onlinesession.dart';
 import '../../Controller/buttoncolorController.dart';
 import '../../CustomWidgets/CustomListtile.dart';
 import 'VideoLectures.dart';

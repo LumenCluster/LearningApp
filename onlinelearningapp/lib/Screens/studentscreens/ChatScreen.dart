@@ -89,7 +89,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:onlinelearningapp/CustomWidgets/ElevatedButton.dart';
 import 'package:onlinelearningapp/CustomWidgets/outlinebutton.dart';
-import 'package:onlinelearningapp/Screens/Student%20Screens/PaymentCONFIRMATION.dart';
+import 'package:onlinelearningapp/Screens/StudentScreens/PaymentCONFIRMATION.dart';
 import 'package:onlinelearningapp/utils/appcolor.dart';
 
 class Chatscreen extends StatelessWidget {

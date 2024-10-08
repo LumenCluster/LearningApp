@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:onlinelearningapp/Screens/Student%20Screens/SelectBoard.dart';
-import 'package:onlinelearningapp/Screens/Student%20Screens/SubjectSelection.dart';
+import 'package:onlinelearningapp/Screens/StudentScreens/SelectBoard.dart';
+import 'package:onlinelearningapp/Screens/StudentScreens/SubjectSelection.dart';
 import 'package:onlinelearningapp/utils/appcolor.dart';
 
 import 'CustomWidgets/ElevatedButton.dart';

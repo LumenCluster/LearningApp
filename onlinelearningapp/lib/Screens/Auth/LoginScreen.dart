@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import 'package:onlinelearningapp/CustomWidgets/CustomTextFields.dart';
 import 'package:onlinelearningapp/CustomWidgets/ElevatedButton.dart';
 import 'package:onlinelearningapp/Roleselect.dart';
-import 'package:onlinelearningapp/Screens/Student%20Screens/SelectBoard.dart';
+import 'package:onlinelearningapp/Screens/StudentScreens/SelectBoard.dart';
 import 'package:onlinelearningapp/utils/appcolor.dart';
 
 import '../../CustomWidgets/OutlinebuttonwithIcon.dart';
