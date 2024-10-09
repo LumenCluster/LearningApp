@@ -32,7 +32,10 @@ class _signupScreenState extends State<signupScreen> {
             SizedBox(
               height: 8,
             ),
-            Text('Create your Account as'),
+            Text(
+              'Create your Account as',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+            ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -46,7 +49,10 @@ class _signupScreenState extends State<signupScreen> {
                     });
                   },
                 ),
-                Text("Student"),
+                Text(
+                  "Student",
+                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500),
+                ),
                 SizedBox(
                   width: 30,
                 ),
@@ -59,7 +65,10 @@ class _signupScreenState extends State<signupScreen> {
                     });
                   },
                 ),
-                Text("Teacher"),
+                Text(
+                  "Teacher",
+                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500),
+                ),
               ],
             ),
             Padding(
@@ -101,6 +110,9 @@ class _signupScreenState extends State<signupScreen> {
                     height: 20,
                   ),
                   Text("Or Continue with "),
+                  SizedBox(
+                    height: 10,
+                  ),
                   outlinebuttonwithicon(
                     value: Alignment.centerLeft,
                     Onpressed: () {},

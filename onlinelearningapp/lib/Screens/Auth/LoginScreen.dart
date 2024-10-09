@@ -5,7 +5,6 @@ import 'package:get/get.dart';
 import 'package:onlinelearningapp/CustomWidgets/CustomTextFields.dart';
 import 'package:onlinelearningapp/CustomWidgets/ElevatedButton.dart';
 import 'package:onlinelearningapp/Roleselect.dart';
-import 'package:onlinelearningapp/Screens/StudentScreens/SelectBoard.dart';
 import 'package:onlinelearningapp/utils/appcolor.dart';
 
 import '../../CustomWidgets/OutlinebuttonwithIcon.dart';
@@ -33,7 +32,14 @@ class _LoginscreenState extends State<Loginscreen> {
             SizedBox(
               height: 8,
             ),
-            Text('Create your Account as'),
+            Text(
+              'Log In',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+            ),
+            SizedBox(
+              height: 5,
+            ),
+            Text('Welcome Back, You’ve been missed!'),
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
