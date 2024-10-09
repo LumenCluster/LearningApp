@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, camel_case_types
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, camel_case_types, unused_local_variable, non_constant_identifier_names
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -23,6 +23,9 @@ class _LoginscreenState extends State<Loginscreen> {
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.sizeOf(context).width;
+
+    TextEditingController Useremail = TextEditingController();
+    TextEditingController Userpassword = TextEditingController();
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.only(top: 80),
@@ -77,12 +80,14 @@ class _LoginscreenState extends State<Loginscreen> {
                     height: 15,
                   ),
                   Customtextfields(
+                    Controller: Useremail,
                     btntext: "Email",
                   ),
                   SizedBox(
                     height: 15,
                   ),
                   Customtextfields(
+                    Controller: Userpassword,
                     btntext: "Password",
                   ),
                   SizedBox(

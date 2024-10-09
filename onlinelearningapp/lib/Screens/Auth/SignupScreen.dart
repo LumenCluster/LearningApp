@@ -1,5 +1,6 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, non_constant_identifier_names
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:onlinelearningapp/CustomWidgets/CustomTextFields.dart';
@@ -7,18 +8,22 @@ import 'package:onlinelearningapp/CustomWidgets/ElevatedButton.dart';
 import 'package:onlinelearningapp/Screens/Auth/LoginScreen.dart';
 import 'package:onlinelearningapp/utils/appcolor.dart';
 
+import '../../Controller/RegisterwithemailController.dart';
 import '../../CustomWidgets/OutlinebuttonwithIcon.dart';
 
 class signupScreen extends StatefulWidget {
-  const signupScreen({super.key});
+  signupScreen({super.key});
 
   @override
   State<signupScreen> createState() => _signupScreenState();
 }
 
 class _signupScreenState extends State<signupScreen> {
-  // Declare a variable to hold the selected radio button value
   int _selectedValue = 1;
+  final RegisterController registerController = Get.put(RegisterController());
+  TextEditingController Username = TextEditingController();
+  TextEditingController Useremail = TextEditingController();
+  TextEditingController Userpassword = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -76,18 +81,21 @@ class _signupScreenState extends State<signupScreen> {
               child: Column(
                 children: [
                   Customtextfields(
+                    Controller: Username,
                     btntext: "Name",
                   ),
                   SizedBox(
                     height: 15,
                   ),
                   Customtextfields(
+                    Controller: Useremail,
                     btntext: "Email",
                   ),
                   SizedBox(
                     height: 15,
                   ),
                   Customtextfields(
+                    Controller: Userpassword,
                     btntext: "Password",
                   ),
                   SizedBox(
@@ -99,8 +107,51 @@ class _signupScreenState extends State<signupScreen> {
                         fontsize: 18,
                         height: 0.07,
                         width: 0.7,
-                        Onpressed: () {
-                          Get.to(() => Loginscreen());
+                        Onpressed: () async {
+                          String Email = Useremail.text.trim();
+                          String Name = Username.text.trim();
+                          String Password = Userpassword.text.trim();
+                          String userDeviceToken = '';
+
+                          if (Email.isEmpty ||
+                              Name.isEmpty ||
+                              Password.isEmpty) {
+                            Get.snackbar("Error", "Please fill all details",
+                                snackPosition: SnackPosition.BOTTOM,
+                                backgroundColor: maincolor,
+                                colorText: Colors.white);
+                          } else if (!GetUtils.isEmail(Email)) {
+                            Get.snackbar("Error", "Please Enter a Vaild Email",
+                                snackPosition: SnackPosition.BOTTOM,
+                                backgroundColor: maincolor,
+                                colorText: Colors.white);
+                          } else {
+                            try {
+                              UserCredential? userCredential =
+                                  await registerController.SignupMethod(
+                                Email,
+                                Name,
+                                Password,
+                                userDeviceToken,
+                              );
+
+                              if (userCredential != null) {
+                                Get.snackbar("Email Verification",
+                                    "Please check your email",
+                                    snackPosition: SnackPosition.BOTTOM,
+                                    backgroundColor: maincolor,
+                                    colorText: Colors.white);
+
+                                FirebaseAuth.instance.signOut();
+                                Get.offAll(() => Loginscreen());
+                              }
+                            } catch (e) {
+                              Get.snackbar("SignUp Faild", e.toString(),
+                                  snackPosition: SnackPosition.BOTTOM,
+                                  backgroundColor: maincolor,
+                                  colorText: Colors.white);
+                            }
+                          }
                         },
                         btntext: "Sign Up",
                         textcolor: whitecolor,
