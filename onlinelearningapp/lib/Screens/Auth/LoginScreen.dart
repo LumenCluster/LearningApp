@@ -1,12 +1,15 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, camel_case_types, unused_local_variable, non_constant_identifier_names
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, camel_case_types, unused_local_variable, non_constant_identifier_names, unnecessary_null_comparison
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:onlinelearningapp/Controller/Getuserdata.dart';
 import 'package:onlinelearningapp/CustomWidgets/CustomTextFields.dart';
 import 'package:onlinelearningapp/CustomWidgets/ElevatedButton.dart';
-import 'package:onlinelearningapp/Roleselect.dart';
+import 'package:onlinelearningapp/Screens/StudentScreens/SelectBoard.dart';
 import 'package:onlinelearningapp/utils/appcolor.dart';
 
+import '../../Controller/LoginController.dart';
 import '../../CustomWidgets/OutlinebuttonwithIcon.dart';
 
 class Loginscreen extends StatefulWidget {
@@ -23,7 +26,9 @@ class _LoginscreenState extends State<Loginscreen> {
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.sizeOf(context).width;
-
+    final LoginController loginController = Get.put(LoginController());
+    final GetuserdataController getuserdataController =
+        Get.put(GetuserdataController());
     TextEditingController Useremail = TextEditingController();
     TextEditingController Userpassword = TextEditingController();
     return Scaffold(
@@ -99,8 +104,51 @@ class _LoginscreenState extends State<Loginscreen> {
                         fontsize: 18,
                         height: 0.07,
                         width: 0.7,
-                        Onpressed: () {
-                          Get.to(() => Roleselect());
+                        Onpressed: () async {
+                          String Email = Useremail.text.trim();
+                          String Password = Userpassword.text.trim();
+
+                          if (Email.isEmpty || Password.isEmpty) {
+                            Get.snackbar(
+                              "Error",
+                              "Please fill the Details",
+                              snackPosition: SnackPosition.BOTTOM,
+                              backgroundColor: maincolor,
+                              colorText: whitecolor,
+                            );
+                          } else {
+                            try {
+                              UserCredential? userCredential =
+                                  await loginController.LoginMethod(
+                                      Email, Password);
+                              if (UserCredential != null) {
+                                var UserData =
+                                    await getuserdataController.Getdata(
+                                        userCredential!.user!.uid);
+                                if (userCredential.user!.emailVerified) {
+                                  if (UserData != null && UserData.isNotEmpty) {
+                                    Get.snackbar(
+                                      "Success Admin Login",
+                                      "Login Successfully!",
+                                      snackPosition: SnackPosition.BOTTOM,
+                                      backgroundColor: maincolor,
+                                      colorText: whitecolor,
+                                    );
+                                  } else {
+                                    Get.offAll(() => Selectboard());
+                                  }
+                                }
+                              }
+                            } catch (e) {
+                              Get.snackbar(
+                                "Error",
+                                "An unexpected error occurred: $e",
+                                snackPosition: SnackPosition.BOTTOM,
+                                backgroundColor: maincolor,
+                                colorText: whitecolor,
+                              );
+                            }
+                          }
                         },
                         btntext: "Login",
                         textcolor: whitecolor,

@@ -3,6 +3,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:onlinelearningapp/Controller/Siginwithgoogle.dart';
 import 'package:onlinelearningapp/CustomWidgets/CustomTextFields.dart';
 import 'package:onlinelearningapp/CustomWidgets/ElevatedButton.dart';
 import 'package:onlinelearningapp/Screens/Auth/LoginScreen.dart';
@@ -21,6 +23,8 @@ class signupScreen extends StatefulWidget {
 class _signupScreenState extends State<signupScreen> {
   int _selectedValue = 1;
   final RegisterController registerController = Get.put(RegisterController());
+  final siginGoogleController _siginGoogleController =
+      Get.put(siginGoogleController());
   TextEditingController Username = TextEditingController();
   TextEditingController Useremail = TextEditingController();
   TextEditingController Userpassword = TextEditingController();
