@@ -92,6 +92,8 @@ import 'package:onlinelearningapp/CustomWidgets/outlinebutton.dart';
 import 'package:onlinelearningapp/Screens/StudentScreens/PaymentCONFIRMATION.dart';
 import 'package:onlinelearningapp/utils/appcolor.dart';
 
+import 'scheduleclass.dart';
+
 class Chatscreen extends StatelessWidget {
   const Chatscreen({super.key});
 
@@ -133,7 +135,9 @@ class Chatscreen extends StatelessWidget {
                 ),
                 Outlinebutton(
                     btntext: "CALL",
-                    Onpressed: () {},
+                    Onpressed: () {
+                      Get.to(() => Scheduleclass());
+                    },
                     height: screenHeight * 0.000065,
                     width: screenWidth * 0.0008,
                     sizeofFont: 16)

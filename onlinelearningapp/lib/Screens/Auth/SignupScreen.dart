@@ -170,7 +170,9 @@ class _signupScreenState extends State<signupScreen> {
                   ),
                   outlinebuttonwithicon(
                     value: Alignment.centerLeft,
-                    Onpressed: () {},
+                    Onpressed: () {
+                      _siginGoogleController.GoogleSiginMethod();
+                    },
                     btntext: 'Google',
                     path: 'assets/Images/googleicon.png',
                   ),
