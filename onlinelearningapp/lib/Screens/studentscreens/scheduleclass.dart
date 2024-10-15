@@ -1,10 +1,12 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:onlinelearningapp/CustomWidgets/smalloutlinebutton.dart';
 import 'package:onlinelearningapp/utils/appcolor.dart';
 import 'package:intl/intl.dart';
 import '../../CustomWidgets/ElevatedButton.dart';
+import 'callpaymentconfirmation.dart';
 
 class Scheduleclass extends StatelessWidget {
   const Scheduleclass({super.key});
@@ -84,7 +86,9 @@ class Scheduleclass extends StatelessWidget {
               height: 20,
             ),
             Elevatedbutton(
-                Onpressed: () {},
+                Onpressed: () {
+                  Get.to(() => callPaymentconfirmation());
+                },
                 btntext: 'Proceed to payment',
                 textcolor: whitecolor,
                 bgcolor: maincolor,

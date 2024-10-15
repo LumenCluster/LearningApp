@@ -1,13 +1,19 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:onlinelearningapp/CustomWidgets/outlinebutton.dart';
+import 'package:onlinelearningapp/CustomWidgets/smalloutlinebutton.dart';
 import 'package:onlinelearningapp/utils/appcolor.dart';
 
-class Paymentconfirmation extends StatelessWidget {
-  const Paymentconfirmation({super.key});
+import '../../CustomWidgets/ElevatedButton.dart';
+
+class callPaymentconfirmation extends StatelessWidget {
+  const callPaymentconfirmation({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.sizeOf(context).height;
+    final screenWidth = MediaQuery.sizeOf(context).height;
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -78,13 +84,13 @@ class Paymentconfirmation extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 50,
+            height: 25,
           ),
-          buildRow('Duration', '1 Months'),
+          buildRow('Duration', '30 Mintues'),
           Divider(),
-          buildRow('Duration', '1 Months'),
+          buildRow('Duration', '0'),
           Divider(),
-          buildRow('Duration', '1 Months'),
+          buildRow('Duration', '0'),
           SizedBox(
             height: 10,
           ),
@@ -97,7 +103,27 @@ class Paymentconfirmation extends StatelessWidget {
           ),
           buildRadiobutton(text: 'Credit Card or Debit Card'),
           buildRadiobutton(text: 'Paypal'),
-          buildRadiobutton(text: 'Jazzcash')
+          buildRadiobutton(text: 'Jazzcash'),
+          Center(
+            child: Elevatedbutton(
+                Onpressed: () {},
+                btntext: 'Confirm',
+                textcolor: whitecolor,
+                bgcolor: maincolor,
+                height: screenHeight * 0.00009,
+                width: screenWidth * 0.0011),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Center(
+            child: Outlinebutton(
+                btntext: 'Cancel',
+                Onpressed: () {},
+                height: screenHeight * 0.00009,
+                width: screenWidth * 0.0011,
+                sizeofFont: 17),
+          )
         ],
       ),
     );
