@@ -10,6 +10,7 @@ import '../../../../Constant/NotesFilename.dart';
 import '../../../../Controller/buttoncolorController.dart';
 import '../../../../CustomWidgets/CustomListtile.dart';
 import '../../Cambridgesyllabus.dart';
+import '../../NotesFile.dart';
 import '../../VideoLectures.dart';
 
 class Biologysubject extends StatelessWidget {
@@ -109,14 +110,31 @@ class Biologysubject extends StatelessWidget {
                 ),
                 Obx(
                   () => smalloutlinebtn(
-                    btntext: 'Video Lectures',
+                    btntext: 'Class Notes',
                     Onpressed: () {
                       buttonController.selectButton(3);
-                      Get.to(() => videolectures());
+                      Get.to(() => ClassNotes(
+                            subjectName: '',
+                          ));
                     },
                     height: 0.034,
                     width: 0.38,
                     isSelected: buttonController.selectedButtonIndex.value == 3,
+                  ),
+                ),
+                SizedBox(
+                  width: 8,
+                ),
+                Obx(
+                  () => smalloutlinebtn(
+                    btntext: 'Video Lectures',
+                    Onpressed: () {
+                      buttonController.selectButton(4);
+                      Get.to(() => videolectures());
+                    },
+                    height: 0.034,
+                    width: 0.38,
+                    isSelected: buttonController.selectedButtonIndex.value == 4,
                   ),
                 ),
               ],

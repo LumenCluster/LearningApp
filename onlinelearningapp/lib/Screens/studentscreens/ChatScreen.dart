@@ -92,7 +92,7 @@ import 'package:onlinelearningapp/CustomWidgets/outlinebutton.dart';
 import 'package:onlinelearningapp/Screens/StudentScreens/PaymentCONFIRMATION.dart';
 import 'package:onlinelearningapp/utils/appcolor.dart';
 
-import 'scheduleclass.dart';
+import 'schedulecall.dart';
 
 class Chatscreen extends StatelessWidget {
   const Chatscreen({super.key});

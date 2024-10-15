@@ -285,6 +285,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:onlinelearningapp/CustomWidgets/smalloutlinebutton.dart';
+import 'package:onlinelearningapp/Screens/StudentScreens/Pastpaper.dart';
 import 'package:onlinelearningapp/Screens/StudentScreens/onlinesession.dart';
 import 'package:onlinelearningapp/utils/appcolor.dart';
 
@@ -292,6 +293,7 @@ import '../../Constant/NotesFilename.dart';
 import '../../Controller/buttoncolorController.dart';
 import '../../CustomWidgets/CustomListtile.dart';
 import 'Cambridgesyllabus.dart';
+import 'NotesFile.dart';
 
 class videolectures extends StatelessWidget {
   videolectures();
@@ -320,17 +322,6 @@ class videolectures extends StatelessWidget {
                 ),
               ),
             ),
-            // Positioned.fill(
-            //   top: screenHeight * 0.13,
-            //   left: screeWidth * 0.38,
-            //   child: Text(
-            //     subjectName,
-            //     style: TextStyle(
-            //         color: whitecolor,
-            //         fontSize: 26,
-            //         fontWeight: FontWeight.w600),
-            //   ),
-            // ),
           ],
         ),
         SizedBox(
@@ -347,6 +338,7 @@ class videolectures extends StatelessWidget {
                     btntext: 'Past Paper',
                     Onpressed: () {
                       buttonController.selectButton(0);
+                      Get.to(() => PastPaper(subjectName: ''));
                     },
                     height: 0.034,
                     width: 0.32,
@@ -381,6 +373,23 @@ class videolectures extends StatelessWidget {
                     height: 0.034,
                     width: 0.38,
                     isSelected: buttonController.selectedButtonIndex.value == 2,
+                  ),
+                ),
+                SizedBox(
+                  width: 8,
+                ),
+                Obx(
+                  () => smalloutlinebtn(
+                    btntext: 'Class Notes',
+                    Onpressed: () {
+                      buttonController.selectButton(3);
+                      Get.to(() => ClassNotes(
+                            subjectName: '',
+                          ));
+                    },
+                    height: 0.034,
+                    width: 0.38,
+                    isSelected: buttonController.selectedButtonIndex.value == 3,
                   ),
                 ),
                 SizedBox(

@@ -1,201 +1,172 @@
-// // // ignore_for_file: prefer_const_constructors
+// ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors_in_immutables, prefer_const_constructors
 
-// // import 'package:flutter/material.dart';
-// // import 'package:onlinelearningapp/CustomWidgets/smalloutlinebutton.dart';
-// // import 'package:onlinelearningapp/utils/appcolor.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:onlinelearningapp/CustomWidgets/smalloutlinebutton.dart';
+import 'package:onlinelearningapp/Screens/StudentScreens/onlinesession.dart';
+import 'package:onlinelearningapp/utils/appcolor.dart';
 
-// // import '../../CustomWidgets/CustomListtile.dart';
+import '../../Constant/NotesFilename.dart';
+import '../../Controller/buttoncolorController.dart';
+import '../../CustomWidgets/CustomListtile.dart';
+import 'Cambridgesyllabus.dart';
+import 'VideoLectures.dart';
 
-// // class Classnoteslist extends StatelessWidget {
-// //   const Classnoteslist({super.key});
+class ClassNotes extends StatelessWidget {
+  final String subjectName;
 
-// //   @override
-// //   Widget build(BuildContext context) {
-// //     final screenHeight = MediaQuery.sizeOf(context).height;
-// //     return Scaffold(
-// //       body: Column(
-// //         children: [
-// //           Container(
-// //             height: screenHeight * 0.3,
-// //             decoration: BoxDecoration(
-// //                 color: maincolor,
-// //                 // ignore: prefer_const_constructors
-// //                 borderRadius:
-// //                     BorderRadius.vertical(bottom: Radius.circular(30))),
-// //           ),
-// //           SingleChildScrollView(
-// //             scrollDirection: Axis.horizontal,
-// //             child: Padding(
-// //               padding: const EdgeInsets.all(15),
-// //               child: Row(
-// //                 children: [
-// //                   smalloutlinebtn(btntext: "Class Notes", Onpressed: () {}),
-// //                   SizedBox(
-// //                     width: 8,
-// //                   ),
-// //                   smalloutlinebtn(btntext: "Video Lecture", Onpressed: () {}),
-// //                   SizedBox(
-// //                     width: 8,
-// //                   ),
-// //                   smalloutlinebtn(btntext: "Online Class", Onpressed: () {}),
-// //                   SizedBox(
-// //                     width: 8,
-// //                   ),
-// //                   smalloutlinebtn(btntext: "Class Course", Onpressed: () {}),
-// //                   SizedBox(
-// //                     width: 8,
-// //                   ),
-// //                   smalloutlinebtn(btntext: "Class Course", Onpressed: () {}),
-// //                 ],
-// //               ),
-// //             ),
-// //           )
-// //         ],
-// //       ),
-// //     );
-// //   }
-// // }
+  ClassNotes({required this.subjectName});
 
-// // ignore_for_file: prefer_const_constructors
+  @override
+  Widget build(BuildContext context) {
+    final ButtonController buttonController = Get.put(ButtonController());
+    final screenHeight = MediaQuery.sizeOf(context).height;
+    final screeWidth = MediaQuery.sizeOf(context).width;
 
-// import 'package:flutter/material.dart';
-// import 'package:get/get.dart';
-// import 'package:onlinelearningapp/CustomWidgets/smalloutlinebutton.dart';
-// import 'package:onlinelearningapp/utils/appcolor.dart';
-// import '../../Controller/buttoncolorController.dart';
-// import '../../CustomWidgets/CustomListtile.dart';
-// import 'Cambridgesyllabus.dart';
-// import 'Pastpaper.dart';
-// import 'VideoLectures.dart'; // Assuming you've created this
-
-// class Classnoteslist extends StatelessWidget {
-//   const Classnoteslist({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     final ButtonController buttonController = Get.put(ButtonController());
-//     final screenHeight = MediaQuery.sizeOf(context).height;
-
-//     // Dummy data for the file names and subtitles
-//     List<String> fileName = [
-//       "Math Notes",
-//       "Science Notes",
-//       "History Notes",
-//       "English Notes",
-//       "Urdu Notes",
-//     ];
-
-//     List<String> subtitle = [
-//       "Chapter 1 - Algebra",
-//       "Chapter 2 - Physics",
-//       "World War II Summary",
-//       "Grammar and Composition",
-//       "Chapter Reading"
-//     ];
-
-//     return Scaffold(
-//       body: Column(
-//         children: [
-//           // Top Container with background color
-//           Container(
-//             height: screenHeight * 0.3,
-//             width: double.infinity,
-//             child: ClipRRect(
-//               borderRadius: BorderRadius.vertical(
-//                 bottom: Radius.circular(25),
-//               ),
-//               child: Image.asset(
-//                 'assets/Images/physics.png',
-//                 fit: BoxFit.cover,
-//               ),
-//             ),
-//           ),
-
-//           // Scrollable row of buttons
-//           SingleChildScrollView(
-//             scrollDirection: Axis.horizontal,
-//             child: Padding(
-//               padding: const EdgeInsets.all(15),
-//               child: Row(
-//                 children: [
-//                   smalloutlinebtn(
-//                       color: buttonController.isOlevelselected.value
-//                           ? Colors.blue // Selected color
-//                           : Colors.grey,
-//                       height: 0.07,
-//                       width: 0.05,
-//                       btntext: "Class Notes",
-//                       Onpressed: () {}),
-//                   SizedBox(width: 8),
-//                   smalloutlinebtn(
-//                       color: buttonController.isOlevelselected.value
-//                           ? Colors.blue // Selected color
-//                           : Colors.grey,
-//                       height: 0.07,
-//                       width: 0.05,
-//                       btntext: "Video Lecture",
-//                       Onpressed: () {
-//                         // Get.to(() => Videolecture());
-//                       }),
-//                   SizedBox(width: 8),
-//                   smalloutlinebtn(
-//                       color: buttonController.isOlevelselected.value
-//                           ? Colors.blue // Selected color
-//                           : Colors.grey,
-//                       height: 0.07,
-//                       width: 0.05,
-//                       btntext: "Past Paper",
-//                       Onpressed: () {
-//                         // Get.to(() => pastPaper());
-//                       }),
-//                   SizedBox(width: 8),
-//                   smalloutlinebtn(
-//                       color: buttonController.isOlevelselected.value
-//                           ? Colors.blue // Selected color
-//                           : Colors.grey,
-//                       height: 0.07,
-//                       width: 0.05,
-//                       btntext: "Cambridge syllabus",
-//                       Onpressed: () {
-//                         Get.to(() => Cambridgesyllabus());
-//                       }),
-//                   SizedBox(width: 8),
-//                   smalloutlinebtn(
-//                       color: buttonController.isOlevelselected.value
-//                           ? Colors.blue // Selected color
-//                           : Colors.grey,
-//                       height: 0.07,
-//                       width: 0.05,
-//                       btntext: "More...",
-//                       Onpressed: () {}),
-//                 ],
-//               ),
-//             ),
-//           ),
-
-//           // Expanded ListView containing CustomListTiles
-//           Expanded(
-//             child: ListView.separated(
-//               padding: const EdgeInsets.all(8.0),
-//               itemCount: fileName.length,
-//               itemBuilder: (context, index) {
-//                 return CustomListTile(
-//                   leadingImage: 'assets/Images/lock.png', // Example image path
-//                   title: fileName[index], // Use your file names here
-//                   subtitle: subtitle[index], // Use your subtitles here
-//                   trailingImage: 'assets/Images/download.png', // Example path
-//                 );
-//               },
-//               separatorBuilder: (context, index) {
-//                 return Divider(
-//                   height: 20,
-//                   thickness: 1,
-//                 );
-//               },
-//             ),
-//           ),
-//         ],
-//       ),
-//     );
-//   }
-// }
+    return Scaffold(
+        body: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Stack(
+          children: [
+            SizedBox(
+              height: screenHeight * 0.3,
+              width: screeWidth,
+              child: ClipRRect(
+                borderRadius:
+                    BorderRadius.vertical(bottom: Radius.circular(25)),
+                child: Image.asset(
+                  'assets/Images/Biology.png',
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+            Positioned.fill(
+              top: screenHeight * 0.13,
+              left: screeWidth * 0.38,
+              child: Text(
+                subjectName,
+                style: TextStyle(
+                    color: whitecolor,
+                    fontSize: 26,
+                    fontWeight: FontWeight.w600),
+              ),
+            ),
+          ],
+        ),
+        SizedBox(
+          height: 20,
+        ),
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              children: [
+                Obx(
+                  () => smalloutlinebtn(
+                    btntext: 'Past Paper',
+                    Onpressed: () {
+                      buttonController.selectButton(0);
+                    },
+                    height: 0.034,
+                    width: 0.4,
+                    isSelected: buttonController.selectedButtonIndex.value == 0,
+                  ),
+                ),
+                SizedBox(
+                  width: 8,
+                ),
+                Obx(
+                  () => smalloutlinebtn(
+                    btntext: 'Cambridge syllabus',
+                    Onpressed: () {
+                      buttonController.selectButton(1);
+                      Get.to(() => Cambridgesyllabus());
+                    },
+                    height: 0.034,
+                    width: 0.5,
+                    isSelected: buttonController.selectedButtonIndex.value == 1,
+                  ),
+                ),
+                SizedBox(
+                  width: 8,
+                ),
+                Obx(
+                  () => smalloutlinebtn(
+                    btntext: 'Online Classes',
+                    Onpressed: () {
+                      buttonController.selectButton(2);
+                      Get.to(() => OnlineSession());
+                    },
+                    height: 0.034,
+                    width: 0.38,
+                    isSelected: buttonController.selectedButtonIndex.value == 2,
+                  ),
+                ),
+                SizedBox(
+                  width: 8,
+                ),
+                Obx(
+                  () => smalloutlinebtn(
+                    btntext: 'Class Notes',
+                    Onpressed: () {
+                      buttonController.selectButton(3);
+                      Get.to(() => ClassNotes(
+                            subjectName: '',
+                          ));
+                    },
+                    height: 0.034,
+                    width: 0.38,
+                    isSelected: buttonController.selectedButtonIndex.value == 3,
+                  ),
+                ),
+                SizedBox(
+                  width: 8,
+                ),
+                Obx(
+                  () => smalloutlinebtn(
+                    btntext: 'Video Lectures',
+                    Onpressed: () {
+                      buttonController.selectButton(4);
+                      Get.to(() => videolectures());
+                    },
+                    height: 0.034,
+                    width: 0.38,
+                    isSelected: buttonController.selectedButtonIndex.value == 4,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(
+            "Class Notes",
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+          ),
+        ),
+        Expanded(
+          child: ListView.separated(
+            padding: const EdgeInsets.all(8.0),
+            itemCount: fileName.length,
+            itemBuilder: (context, index) {
+              return CustomListTile(
+                title: fileName[index],
+                subtitle: '',
+                trailingImage: 'assets/Images/download.png',
+              );
+            },
+            separatorBuilder: (context, index) {
+              return Divider(
+                height: 20,
+                thickness: 0,
+              );
+            },
+          ),
+        ),
+      ],
+    ));
+  }
+}

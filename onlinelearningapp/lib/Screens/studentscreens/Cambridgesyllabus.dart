@@ -8,6 +8,7 @@ import 'package:onlinelearningapp/Screens/StudentScreens/Pastpaper.dart';
 import 'package:onlinelearningapp/Screens/StudentScreens/onlinesession.dart';
 import '../../Controller/buttoncolorController.dart';
 import '../../CustomWidgets/CustomListtile.dart';
+import 'NotesFile.dart';
 import 'VideoLectures.dart';
 
 // Assuming you've created this
@@ -109,6 +110,24 @@ class Cambridgesyllabus extends StatelessWidget {
                       width: 0.38,
                       isSelected:
                           buttonController.selectedButtonIndex.value == 2,
+                    ),
+                  ),
+                  SizedBox(
+                    width: 8,
+                  ),
+                  Obx(
+                    () => smalloutlinebtn(
+                      btntext: 'Class Notes',
+                      Onpressed: () {
+                        buttonController.selectButton(3);
+                        Get.to(() => ClassNotes(
+                              subjectName: '',
+                            ));
+                      },
+                      height: 0.034,
+                      width: 0.38,
+                      isSelected:
+                          buttonController.selectedButtonIndex.value == 3,
                     ),
                   ),
                   SizedBox(

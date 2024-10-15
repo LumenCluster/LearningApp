@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -72,6 +72,65 @@ class Scheduleclass extends StatelessWidget {
               decoration: BoxDecoration(
                   border: Border.all(color: maincolor, width: 2),
                   borderRadius: BorderRadius.circular(10)),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text('Mon'),
+                      SizedBox(
+                        width: 25,
+                      ),
+                      Text('Tue'),
+                      SizedBox(
+                        width: 25,
+                      ),
+                      Text('Wed'),
+                      SizedBox(
+                        width: 25,
+                      ),
+                      Text("Thu"),
+                      SizedBox(
+                        width: 25,
+                      ),
+                      Text("Fri"),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  Container(
+                    height: screenHeight * 0.05,
+                    width: screenWidth * 0.3,
+                    decoration: BoxDecoration(
+                        border: Border.all(color: maincolor, width: 2),
+                        borderRadius: BorderRadius.circular(10)),
+                    child: Center(child: Text('12 : 00 AM')),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    height: screenHeight * 0.05,
+                    width: screenWidth * 0.3,
+                    decoration: BoxDecoration(
+                        border: Border.all(color: maincolor, width: 2),
+                        borderRadius: BorderRadius.circular(10)),
+                    child: Center(child: Text('12 : 00 AM')),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    height: screenHeight * 0.05,
+                    width: screenWidth * 0.3,
+                    decoration: BoxDecoration(
+                        border: Border.all(color: maincolor, width: 2),
+                        borderRadius: BorderRadius.circular(10)),
+                    child: Center(child: Text('12 : 00 AM')),
+                  ),
+                ],
+              ),
             ),
             SizedBox(
               height: 20,

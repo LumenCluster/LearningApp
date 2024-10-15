@@ -8,6 +8,7 @@ import 'package:onlinelearningapp/CustomWidgets/smalloutlinebutton.dart';
 import 'package:onlinelearningapp/Screens/StudentScreens/Pastpaper.dart';
 import 'package:onlinelearningapp/utils/appcolor.dart';
 import 'Cambridgesyllabus.dart';
+import 'NotesFile.dart';
 import 'Tutordetails.dart';
 import 'VideoLectures.dart';
 
@@ -100,15 +101,33 @@ class OnlineSession extends StatelessWidget {
                   ),
                   Obx(
                     () => smalloutlinebtn(
-                      btntext: 'Video Lectures',
+                      btntext: 'Class Notes',
                       Onpressed: () {
                         buttonController.selectButton(3);
-                        Get.to(() => videolectures());
+                        Get.to(() => ClassNotes(
+                              subjectName: '',
+                            ));
                       },
                       height: 0.034,
                       width: 0.38,
                       isSelected:
                           buttonController.selectedButtonIndex.value == 3,
+                    ),
+                  ),
+                  SizedBox(
+                    width: 8,
+                  ),
+                  Obx(
+                    () => smalloutlinebtn(
+                      btntext: 'Video Lectures',
+                      Onpressed: () {
+                        buttonController.selectButton(4);
+                        Get.to(() => videolectures());
+                      },
+                      height: 0.034,
+                      width: 0.38,
+                      isSelected:
+                          buttonController.selectedButtonIndex.value == 4,
                     ),
                   ),
                 ],
